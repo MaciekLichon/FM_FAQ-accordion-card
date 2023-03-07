@@ -1,0 +1,235 @@
+/* COLORS */
+/* TYPE */
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+
+/*
+  3. Allow percentage-based heights in the application
+*/
+html, body {
+  height: 100%;
+}
+
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.26;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+  6. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+}
+
+/*
+  7. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+
+/*
+  8. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/*
+  9. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+/* COLORS */
+/* TYPE */
+body {
+  background-image: linear-gradient(#af67e9, #6565e7);
+  padding: 1.5rem;
+  font-family: "Kumbh Sans", sans-serif;
+  font-weight: 400;
+  color: #1d1e35;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  max-width: 327px;
+}
+
+.card__image {
+  position: relative;
+  width: 237px;
+  margin: 0 auto;
+}
+
+.card__image .foreground, .card__image .background, .card__image .box {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.card__image .foreground {
+  top: -108px;
+}
+
+.card__image .box {
+  display: none;
+}
+
+.card__content {
+  background-color: white;
+  border-radius: 23px;
+  box-shadow: 0px 50px 50px -20px rgba(53, 18, 122, 0.497159);
+  padding: 8.25rem 1.5rem 3rem 1.5rem;
+  margin-top: 108px;
+}
+
+.card__content .card__title {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1.875rem;
+}
+
+.question {
+  padding: 20px 0;
+  border-bottom: 1px solid #e7e7e9;
+}
+
+.question:first-child {
+  padding-top: 0;
+}
+
+.question .question__ask {
+  background: none;
+  border: none;
+  width: 100%;
+  padding: 0;
+  color: #4a4b5e;
+  font-size: 0.813rem;
+  font-weight: 400;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.question .question__ask::after {
+  content: url("../images/icon-arrow-down.svg");
+  transition: 0.3s;
+}
+
+.question .question__ask:hover {
+  color: #f47c57;
+}
+
+.question .question__ask:focus {
+  font-weight: 700;
+  color: #1d1e35;
+}
+
+.question .question__ask:focus::after {
+  transform: rotate(180deg);
+}
+
+.question .question__answer {
+  font-size: 0.75rem;
+  padding-right: 1.25rem;
+  color: #787887;
+  overflow: hidden;
+}
+
+.question:focus-within .question__answer {
+  max-height: 60px;
+  transition: max-height 1s;
+}
+
+.question:not(:focus-within) .question__answer {
+  max-height: 0;
+  transition: max-height 1s;
+}
+
+@media (min-width: 980px) {
+  .card {
+    max-width: none;
+    margin-left: 40px;
+    width: 920px;
+    display: flex;
+    gap: 30px;
+    background-color: white;
+    box-shadow: 0px 50px 50px -20px rgba(53, 18, 122, 0.497159);
+    border-radius: 23px;
+  }
+  .card__image, .card__content {
+    flex-basis: 50%;
+  }
+  .card__content {
+    padding: 65px 0 83px 0;
+    margin-top: 0;
+    background: none;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .card__content .card__questionsList {
+    max-width: 350px;
+  }
+  .card__content .card__title {
+    text-align: left;
+  }
+  .card__image {
+    margin: 0;
+  }
+  .card__image .card__imageContainer {
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    position: relative;
+  }
+  .card__image .foreground, .card__image .background {
+    transform: none;
+    width: auto;
+    height: auto;
+  }
+  .card__image .foreground {
+    top: 70px;
+    left: -90px;
+    z-index: 2;
+  }
+  .card__image .background {
+    top: -295px;
+    left: -582px;
+    z-index: 1;
+  }
+  .card__image .box {
+    display: block;
+    width: auto;
+    height: auto;
+    left: 0;
+    top: 200px;
+    z-index: 3;
+  }
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3Nhc3MvdmFyaWFibGVzLnNjc3MiLCIuLi9zYXNzL3Jlc2V0LnNjc3MiLCJzdHlsZS5jc3MiLCIuLi9zYXNzL2dlbmVyYWwuc2NzcyIsIi4uL3Nhc3Mvc3R5bGUuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFDQSxXQUFBO0FBWUEsU0FBQTtBQ2JBOztDQ0lDO0FEREQ7RUFDRSxzQkFBc0I7QUNHeEI7O0FEREE7O0NDS0M7QURGRDtFQUNFLFNBQVM7QUNJWDs7QURGQTs7Q0NNQztBREhEO0VBQ0UsWUFBWTtBQ0tkOztBREhBOzs7O0NDU0M7QURKRDtFQUNFLGlCQUFpQjtFQUNqQixtQ0FBbUM7QUNNckM7O0FESkE7O0NDUUM7QURMRDtFQUNFLGNBQWM7QUNPaEI7O0FESkE7O0NDUUM7QURMRDtFQUNFLGFBQWE7QUNPZjs7QURMQTs7Q0NTQztBRE5EO0VBQ0UseUJBQXlCO0FDUTNCOztBRE5BOztDQ1VDO0FEUEQ7RUFDRSxrQkFBa0I7QUNTcEI7O0FGMURBLFdBQUE7QUFZQSxTQUFBO0FHVkE7RUFDRSxtREFBK0Q7RUFDL0QsZUFBZTtFQUVmLHFDSE9tQztFR05uQyxnQkhRYztFR1BkLGNISDBCO0VHSzFCLGFBQWE7RUFDYix1QkFBdUI7RUFDdkIsbUJBQW1CO0FEMkRyQjs7QUVuRUE7RUFBUSxnQkFBZ0I7QUZ1RXhCOztBRXJFQTtFQUNFLGtCQUFrQjtFQUNsQixZQUFZO0VBQ1osY0FBYztBRndFaEI7O0FFM0VBO0VBTUksa0JBQWtCO0VBQ2xCLFdBQVc7RUFDWCxZQUFZO0VBQ1osTUFBTTtFQUNOLFNBQVM7RUFDVCwyQkFBMkI7QUZ5RS9COztBRXBGQTtFQWFnQixXQUFXO0FGMkUzQjs7QUV4RkE7RUFjUyxhQUFhO0FGOEV0Qjs7QUUzRUE7RUFDRSx1Qkp2QndCO0VJd0J4QixtQkFBbUI7RUFDbkIsMkRBQTJEO0VBQzNELG1DQUFtQztFQUNuQyxpQkFBaUI7QUY4RW5COztBRW5GQTtFQVFJLGVKYmdCO0VJY2hCLGdCSmhCUztFSWlCVCxrQkFBa0I7RUFDbEIsdUJBQXVCO0FGK0UzQjs7QUUzRUE7RUFDRSxlQUFlO0VBQ2YsZ0NKdEN5QjtBRW9IM0I7O0FFaEZBO0VBSWtCLGNBQWM7QUZnRmhDOztBRXBGQTtFQU9JLGdCQUFnQjtFQUNoQixZQUFZO0VBQ1osV0FBVztFQUNYLFVBQVU7RUFDVixjSjdDd0I7RUk4Q3hCLG1CSi9Cc0I7RUlnQ3RCLGdCSnBDWTtFSXFDWixhQUFhO0VBQ2IsOEJBQThCO0VBQzlCLG1CQUFtQjtFQUNuQixlQUFlO0FGaUZuQjs7QUVsR0E7RUFvQk0sNkNBQTZDO0VBQzdDLGdCQUFnQjtBRmtGdEI7O0FFdkdBO0VBd0JNLGNKeER3QjtBRTJJOUI7O0FFM0dBO0VBMkJNLGdCSmpETztFSWtEUCxjSjdEc0I7QUVpSjVCOztBRWhIQTtFQStCTSx5QkFBeUI7QUZxRi9COztBRWhGQTtFQUdJLGtCSnpEbUI7RUkwRG5CLHNCQUFzQjtFQUN0QixjSjVFdUI7RUk2RXZCLGdCQUFnQjtBRmlGcEI7O0FFdkZBO0VBV00sZ0JBQWdCO0VBQ2hCLHlCQUF5QjtBRmdGL0I7O0FFNUZBO0VBaUJNLGFBQWE7RUFDYix5QkFBeUI7QUYrRS9COztBRXhFQTtFQUNFO0lBQ0UsZUFBZTtJQUNmLGlCQUFpQjtJQUNqQixZQUFZO0lBQ1osYUFBYTtJQUNiLFNBQVM7SUFDVCx1Qkp6R3NCO0lJMEd0QiwyREFBMkQ7SUFDM0QsbUJBQW1CO0VGMkVyQjtFRXhFQTtJQUErQixlQUFlO0VGMkU5QztFRXpFQTtJQUNFLHNCQUFzQjtJQUN0QixhQUFhO0lBQ2IsZ0JBQWdCO0lBQ2hCLGdCQUFnQjtJQUNoQixnQkFBZ0I7RUYyRWxCO0VFaEZBO0lBT3lCLGdCQUFnQjtFRjRFekM7RUVuRkE7SUFRaUIsZ0JBQWdCO0VGOEVqQztFRTNFQTtJQUNFLFNBQVM7RUY2RVg7RUU5RUE7SUFJSSxnQkFBZ0I7SUFDaEIsWUFBWTtJQUNaLFdBQVc7SUFDWCxrQkFBa0I7RUY2RXRCO0VFcEZBO0lBV0ksZUFBZTtJQUNmLFdBQVc7SUFDWCxZQUFZO0VGNEVoQjtFRXpGQTtJQWlCSSxTQUFTO0lBQ1QsV0FBVztJQUNYLFVBQVU7RUYyRWQ7RUU5RkE7SUFzQkksV0FBVztJQUNYLFlBQVk7SUFDWixVQUFVO0VGMkVkO0VFbkdBO0lBMkJJLGNBQWM7SUFDZCxXQUFXO0lBQ1gsWUFBWTtJQUNaLE9BQU87SUFDUCxVQUFVO0lBQ1YsVUFBVTtFRjJFZDtBQUNGIiwiZmlsZSI6InN0eWxlLmNzcyJ9 */

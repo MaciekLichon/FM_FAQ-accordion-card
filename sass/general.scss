@@ -1,0 +1,15 @@
+@import './variables.scss';
+
+
+body {
+  background-image: linear-gradient($clr-grad-one, $clr-grad-two);
+  padding: 1.5rem;
+
+  font-family: $ff-regular;
+  font-weight: $fw-regular;
+  color: $clr-500;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
